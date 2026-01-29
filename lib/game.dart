@@ -68,6 +68,20 @@ class _GameState extends State<Game> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            SizedBox(
+              width: boxSize*3,
+              height: boxSize*3,
+              child: GridView.count(
+                crossAxisCount: 3,
+                children: List.generate(9, (x) {
+                  return Container(
+                    width: boxSize,
+                    height: boxSize,
+                    decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+                  );
+                }),
+              ),
+            ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
